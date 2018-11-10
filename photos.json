@@ -1,0 +1,34 @@
+{
+  "photo": [
+    {
+      "id": "1",
+      "name": "1.png",
+      "title": "Manège infernal"
+    },
+    {
+      "id": "2",
+      "name": "2.png",
+      "title": "Africa Baobab"
+    },
+    {
+      "id": "3",
+      "name": "3.png",
+      "title": "Piscine"
+    },
+    {
+      "id": "4",
+      "name": "4.png",
+      "title": "New York"
+    },
+    {
+      "id": "5",
+      "name": "5.png",
+      "title": "Taxi"
+    },
+    {
+      "id": "6",
+      "name": "6.png",
+      "title": "Chaises sur plage"
+    }
+  ]
+}

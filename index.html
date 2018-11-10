@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BeLoad</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+
+    <script>
+        $(function() {
+            $.getJSON('photos.json', function(data) {
+                $.each(data.photo, function(i, f) {
+                    var photo =
+                        "      <div class=\"col-md-4 col-sm-6 portfolio-item\">\n" +
+                        "        <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#photoForm\">\n" +
+                        "          <div class=\"portfolio-hover\">\n" +
+                        "            <div class=\"portfolio-hover-content\">\n" +
+                        "              <i class=\"fas fa-plus fa-3x\"></i>\n" +
+                        "            </div>\n" +
+                        "          </div>\n" +
+                        "          <img class=\"img-fluid\" src=\"img/galerie/" + f.name + "\" alt=\"\">\n" +
+                        "        </a>\n" +
+                        "        <div class=\"portfolio-caption\">\n" +
+                        "          <p>" + f.title + "</p>\n" +
+                        "        </div>\n" +
+                        "      </div>"
+                    $(photo).appendTo("#galerie");
+                });
+            });
+        });
+    </script>
+  </head>
+
+  <body id="page-top">
+
+  <div class="wrapper">
+    <div class="profile" id= "userdata">
+    </div>
+  </div>
+
+
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">BeLoad</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#offre">Offre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Galerie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <img class="mx-auto img-logo" src="img/logos/logo_blanc.png" alt="">
+          <div class="intro-lead-in">Chaque photo Instagram peut être une oeuvre d’art, à vous d’en décider !</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 text-center">
+            <h2 class="section-subheading text-muted">
+              Beaload est le premier éditeur de photographies d’art accessible par tous et pour tous.
+            </h2>
+            <p class="section-subheading text-muted">
+              <br>Nous ne pensons pas que derrière chaque grande photo, se cache un grand photographe.
+              C’est pourquoi nous aimons croire que chaque personne peut réaliser un chef d’oeuvre.<br><br>
+              Beload selectionne les plus belles photographies Instagram et vous les rend accessibles.
+              En travaillant avec les meilleurs artisans, nous cherchons ensuite à les mettre en valeur grâce à un tirage de belle qualité et des finitions irréprochables.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="bg-light" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-muted">Comment ca marche ?</h2>
+            <h3 class="section-subheading text-muted">Choisissez une belle photo, BeLoad s'occupe du reste</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Sélectionnez votre coup de coeur</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Notre équipe selectionne les plus belles photos Instagram</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Choisissez votre format</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Nous vous proposons plusieurs type de format.<br>
+                      La finition sera plexiglass sur aluminium. Il s'agit du meilleur rendu.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Passez votre commande</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">N'hésitez pas à nous contacter si vous avez la moindre question</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Nous réalisons votre commande</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Nous travaillons avec des partenaires reconnu pour leur professionnalisme.
+                      Les photographies seront entièrement réalisé en France</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/5.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Recevez votre commande</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Nous vous livrons votre oeuvre sous 8 jours</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offre">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-muted">Nos différentes offres</h2>
+            <h3 class="section-subheading text-muted">BeLoad vous offre 3 tailles de tableaux pour convenir au mieux à votre intérieur</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto" src="img/offre/petit.png" alt="">
+              <h4>40 x 40 cm</h4>
+              <p class="text-muted">Le petit format à 100 euros</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto" src="img/offre/moyen.png" alt="">
+              <h4>70 x 70</h4>
+              <p class="text-muted">Le format medium à 150 euros</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto" src="img/offre/grand.png" alt="">
+              <h4>100 x 100</h4>
+              <p class="text-muted">Le format géant à 200 euros</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-muted">Galerie</h2>
+            <h3 class="section-subheading text-muted">Choisissez la photo qui habillera votre salon</h3>
+          </div>
+        </div>
+        <div class="row text-left" id="galerie">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Une question ?</h2>
+            <h3 class="section-subheading text-muted">Nous restons à votre écoute pour toutes informations</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Envoyer</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; BeLoad 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Forms -->
+    <div class="portfolio-modal modal fade" id="photoForm" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 mx-auto">
+                <div class="modal-body">
+                  <h3 class="text-uppercase">Commander votre tableau</h3>
+                  <p class="item-intro text-muted">Veuillez remplir les informations ci-dessous.
+                    Un mail de validation vous sera envoyé pour valider votre commande.</p>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse mail">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelect1">Taille</label>
+                      <select class="form-control" id="exampleSelect1">
+                        <option>Petit - 40x40 cm - 100€</option>
+                        <option>Moyen - 70x70 cm - 150€</option>
+                        <option>Grand 100 x100 cm - 200€</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Commander</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
+</html>
