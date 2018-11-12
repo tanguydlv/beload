@@ -8,14 +8,37 @@
 #about {
     padding: 80px;
 }
-
-.intro-text{
-    padding-top: 10px;
+#offre {
+    padding: 80px;
 }
-.img-logo {
-    width: 600px;
+.arguments{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-
+.arg{
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+    margin-bottom: 0;
+}
+.size{
+    display: flex;
+    flex-direction: column;
+}
+.size-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-items: center;
+    margin-top: 10%;
+}
+.text-row{
+    margin-left: 10%;
+}
+.offre-container{
+    margin-bottom: 40px;
+}
 .carousel-indicators li {
     background-color: #999;
     background-color: rgba(70,70,70,.25);
@@ -31,4 +54,22 @@
 
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+#carre-small {
+    height: 40px;
+    width: 40px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.5);
+}
+#carre-medium {
+    height: 60px;
+    width: 60px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.5);
+}
+#carre-large {
+    height: 80px;
+    width: 80px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.5);
 }

@@ -92,11 +92,11 @@ img::-moz-selection{
     font-family:Futura, Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
 }
 #mainNav .navbar-brand{
-    color:#fed136;
+    color:#000000;
     font-family:'Kaushan Script',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
 }
 #mainNav .navbar-brand.active,#mainNav .navbar-brand:active,#mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{
-    color:#fec503
+    color:#000000
 }
 #mainNav .navbar-nav .nav-item .nav-link{
     font-size:90%;
@@ -107,11 +107,11 @@ img::-moz-selection{
     font-family:Futura, Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,#mainNav .navbar-nav .nav-item .nav-link:hover{
-    color:#fed136
+    color: gray;
 }
 @media (min-width:992px){
     #mainNav{
-        padding-top:25px;
+        padding-top:15px;
         padding-bottom:25px;
         -webkit-transition:padding-top .3s,padding-bottom .3s;
         transition:padding-top .3s,padding-bottom .3s;
@@ -129,7 +129,7 @@ img::-moz-selection{
     #mainNav.navbar-shrink{
         padding-top:0;
         padding-bottom:0;
-        background-color:#212529
+        background-color:#ffffff;
     }
     #mainNav.navbar-shrink .navbar-brand{
         font-size:1.25em;
@@ -137,17 +137,29 @@ img::-moz-selection{
     }
 }
 header.masthead{
-    text-align:right;
+    display: flex;
+    flex-direction: row;
+}
+header.masthead .intro-img{
+    flex-basis: 50%;
     color:#fff;
-    background-image:url(../img/header-bg.jpg);
-    background-repeat:no-repeat;
-    background-attachment:scroll;
-    background-position:left left;
-    background-size:auto
+    padding-top: 80px;
+    padding-left: 80px;
 }
 header.masthead .intro-text{
-    padding-top:150px;
-    padding-bottom:100px
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+header.masthead .intro-text .logo{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+header.masthead .intro-text .baseline{
+    margin-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 header.masthead .intro-text .intro-lead-in{
     font-size:22px;
@@ -165,7 +177,7 @@ header.masthead .intro-text .intro-heading{
 }
 @media (min-width:768px){
     header.masthead .intro-text{
-        padding-top:150px;
+        padding-top:15%;
         padding-bottom:200px
     }
     header.masthead .intro-text .intro-lead-in{
