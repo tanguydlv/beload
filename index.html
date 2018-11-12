@@ -31,19 +31,16 @@
             $.getJSON('photos.json', function(data) {
                 $.each(data.photo, function(i, f) {
                     var photo =
-                        "      <div class=\"col-md-4 col-sm-6 portfolio-item\">\n" +
-                        "        <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#photoForm\">\n" +
-                        "          <div class=\"portfolio-hover\">\n" +
-                        "            <div class=\"portfolio-hover-content\">\n" +
-                        "              <i class=\"fas fa-plus fa-3x\"></i>\n" +
-                        "            </div>\n" +
-                        "          </div>\n" +
-                        "          <img class=\"img-fluid\" src=\"img/galerie/" + f.name + "\" alt=\"\">\n" +
-                        "        </a>\n" +
-                        "        <div class=\"portfolio-caption\">\n" +
-                        "          <p>" + f.title + "</p>\n" +
-                        "        </div>\n" +
-                        "      </div>"
+                              "<div class=\"col-md-4 col-sm-6 portfolio-item\">\n" +
+                                "<a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#photoForm"+ f.id + "\">\n" +
+                                  "<div class=\"portfolio-hover\">\n" +
+                                    "<div class=\"portfolio-hover-content\">\n" +
+                                      "<i class=\"fas fa-plus fa-3x\"></i>\n" +
+                                    "</div>\n" +
+                                  "</div>\n" +
+                                  "<img class=\"img-fluid\" src=\"img/galerie/" + f.name + "\" alt=\"\">\n" +
+                                "</a>\n" +
+                              "</div>"
                     $(photo).appendTo("#galerie");
                 });
             });
@@ -90,8 +87,7 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <img class="mx-auto img-logo" src="img/logos/logo_blanc.png" alt="">
-          <div class="intro-lead-in">Chaque photo Instagram peut être une oeuvre d’art, à vous d’en décider !</div>
+          <img class="mx-auto img-logo" src="img/logos/logo_noir_full.png" alt="">
         </div>
       </div>
     </header>
@@ -102,105 +98,23 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1 text-center">
             <h2 class="section-subheading text-muted">
-              Beaload est le premier éditeur de photographies d’art accessible par tous et pour tous.
+              Beaload est le premier éditeur de photographies accessibles par tous et pour tous.
             </h2>
             <p class="section-subheading text-muted">
               <br>Nous ne pensons pas que derrière chaque grande photo, se cache un grand photographe.
               C’est pourquoi nous aimons croire que chaque personne peut réaliser un chef d’oeuvre.<br><br>
               Beload selectionne les plus belles photographies Instagram et vous les rend accessibles.
-              En travaillant avec les meilleurs artisans, nous cherchons ensuite à les mettre en valeur grâce à un tirage de belle qualité et des finitions irréprochables.
+              En travaillant avec les meilleurs artisans, nous cherchons ensuite à les mettre en valeur grâce à un tirage de belle qualité et des finitions irréprochables.<br><br>
+              Afin de les faire passer du monde virtuel au monde réel, nous avons selectionnés les meilleurs ateliers dans lesquels sont
+              imprimées, façonnées, encadrées et expédiées les oeuvres que vous avez choisi.
+              Chaque oeuvre finie est méticuleusement contrôlée afin de vous promettre une qualité irréprochable.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="bg-light" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-muted">Comment ca marche ?</h2>
-            <h3 class="section-subheading text-muted">Choisissez une belle photo, BeLoad s'occupe du reste</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="timeline">
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Sélectionnez votre coup de coeur</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Notre équipe selectionne les plus belles photos Instagram</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Choisissez votre format</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Nous vous proposons plusieurs type de format.<br>
-                      La finition sera plexiglass sur aluminium. Il s'agit du meilleur rendu.</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Passez votre commande</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">N'hésitez pas à nous contacter si vous avez la moindre question</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Nous réalisons votre commande</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Nous travaillons avec des partenaires reconnu pour leur professionnalisme.
-                      Les photographies seront entièrement réalisé en France</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/5.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Recevez votre commande</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Nous vous livrons votre oeuvre sous 8 jours</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="offre">
+    <section class="bg-light" id="offre">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -213,29 +127,35 @@
             <div class="team-member">
               <img class="mx-auto" src="img/offre/petit.png" alt="">
               <h4>40 x 40 cm</h4>
-              <p class="text-muted">Le petit format à 100 euros</p>
+              <p class="text-muted">Le petit format à 90 euros</p>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto" src="img/offre/moyen.png" alt="">
               <h4>70 x 70</h4>
-              <p class="text-muted">Le format medium à 150 euros</p>
+              <p class="text-muted">Le format medium à 180 euros</p>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto" src="img/offre/grand.png" alt="">
               <h4>100 x 100</h4>
-              <p class="text-muted">Le format géant à 200 euros</p>
+              <p class="text-muted">Le format géant à 270 euros</p>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p class="section-heading text-muted">Vos oeuvres sont imprimées d'une qualité irréprochable avec un
+            savoir francais.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Portfolio Grid -->
-    <section class="bg-light" id="portfolio">
+    <section id="portfolio">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -324,7 +244,7 @@
     </footer>
 
   <!-- Forms -->
-    <div class="portfolio-modal modal fade" id="photoForm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="photoForm1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -337,8 +257,32 @@
               <div class="col-lg-6 mx-auto">
                 <div class="modal-body">
                   <h3 class="text-uppercase">Commander votre tableau</h3>
-                  <p class="item-intro text-muted">Veuillez remplir les informations ci-dessous.
-                    Un mail de validation vous sera envoyé pour valider votre commande.</p>
+                  <p class="item-intro text-muted">Manège infernal</p>
+
+                  <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src="img/galerie/visuel/Barbara_2_v1.png" alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="img/galerie/visuel/Barbara_2_v2.png" alt="Second slide">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                  <p class="text-muted">Veuillez remplir les informations ci-dessous.
+                    Un mail de validation vous sera envoyé pour finaliser votre commande.</p>
                   <form>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email</label>
@@ -362,6 +306,254 @@
         </div>
       </div>
     </div>
+  <div class="portfolio-modal modal fade" id="photoForm2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto">
+              <div class="modal-body">
+                <h3 class="text-uppercase">Commander votre tableau</h3>
+                <p class="item-intro text-muted">Manège infernal</p>
+
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="img/galerie/visuel/Camille_5_v1.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="img/galerie/visuel/Camille_5_v2.png" alt="Second slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                <p class="text-muted">Veuillez remplir les informations ci-dessous.
+                  Un mail de validation vous sera envoyé pour finaliser votre commande.</p>
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse mail">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect1">Taille</label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>Petit - 40x40 cm - 100€</option>
+                      <option>Moyen - 70x70 cm - 150€</option>
+                      <option>Grand 100 x100 cm - 200€</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Commander</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="photoForm3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto">
+              <div class="modal-body">
+                <h3 class="text-uppercase">Commander votre tableau</h3>
+                <p class="item-intro text-muted">Manège infernal</p>
+
+                <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="img/galerie/visuel/Barbara_1_v1.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="img/galerie/visuel/Barbara_1_v2.png" alt="Second slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                <p class="text-muted">Veuillez remplir les informations ci-dessous.
+                  Un mail de validation vous sera envoyé pour finaliser votre commande.</p>
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse mail">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect1">Taille</label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>Petit - 40x40 cm - 100€</option>
+                      <option>Moyen - 70x70 cm - 150€</option>
+                      <option>Grand 100 x100 cm - 200€</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Commander</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="photoForm4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto">
+              <div class="modal-body">
+                <h3 class="text-uppercase">Commander votre tableau</h3>
+                <p class="item-intro text-muted">Manège infernal</p>
+
+                <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators4" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators4" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="img/galerie/visuel/Camille_1_v1.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="img/galerie/visuel/Camille_1_v2.png" alt="Second slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                <p class="text-muted">Veuillez remplir les informations ci-dessous.
+                  Un mail de validation vous sera envoyé pour finaliser votre commande.</p>
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse mail">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect1">Taille</label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>Petit - 40x40 cm - 100€</option>
+                      <option>Moyen - 70x70 cm - 150€</option>
+                      <option>Grand 100 x100 cm - 200€</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Commander</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="photoForm5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto">
+              <div class="modal-body">
+                <h3 class="text-uppercase">Commander votre tableau</h3>
+                <p class="item-intro text-muted">Manège infernal</p>
+
+                <div id="carouselExampleIndicators5" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators5" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators5" data-slide-to="1"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="img/galerie/visuel/Barbara_5_v1.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="img/galerie/visuel/Barbara_5_v2.png" alt="Second slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators5" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators5" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                <p class="text-muted">Veuillez remplir les informations ci-dessous.
+                  Un mail de validation vous sera envoyé pour finaliser votre commande.</p>
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse mail">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect1">Taille</label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>Petit - 40x40 cm - 100€</option>
+                      <option>Moyen - 70x70 cm - 150€</option>
+                      <option>Grand 100 x100 cm - 200€</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Commander</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
