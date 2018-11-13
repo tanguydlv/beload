@@ -11,6 +11,13 @@
 #offre {
     padding: 80px;
 }
+.btn-home{
+    width: 150px;
+    margin-top: 8%;
+}
+.margin-top{
+    margin-top: 10%;
+}
 .arguments{
     display: flex;
     flex-direction: row;
