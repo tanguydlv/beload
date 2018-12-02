@@ -15,8 +15,8 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
    
 // Create the email and send the message
 $toTanguy = 'tvillegeorges@gmail.com';
-$toVal = 'valentin.durand@gmail.com';
-$toGuim = 'gvillegeorges@hotmail.fr';
+$toVal = 'valentin.durand0@gmail.com';
+$toGuim = 'guillemettedlv@gmail.com';
 
 $email_subject = "[BeLoad] Message de:  $name";
 

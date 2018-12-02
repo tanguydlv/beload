@@ -1,5 +1,6 @@
-$(function() {
-  $("#commandeForm input,#commandeForm select").jqBootstrapValidation({
+function sendCommande(i) {
+  console.log(i)
+  $("#commandeForm"+i+" input,#commandeForm"+i+" select").jqBootstrapValidation({
     preventSubmit: true,
     submitError: function($form, event, errors) {
       // additional error messages or events
@@ -7,23 +8,29 @@ $(function() {
     submitSuccess: function($form, event) {
       event.preventDefault(); // prevent default submit behaviour
       // get values from FORM
-      var name = $("input#nameCommande").val();
-      var email = $("input#emailCommande").val();
-      var type = $("select#selectType").val();
-      var size = $("select#selectSize").val();
-      var firstName = name; // For Success/Failure Message
-      // Check for white space in name for Success/Fail message
-      if (firstName.indexOf(' ') >= 0) {
-        firstName = name.split(' ').slice(0, -1).join(' ');
+      if (i===0) {
+        console.log("toto")
+        var name = $('.image-editor').cropit('export', {
+          type: 'image/jpeg',
+          quality: 1,
+          originalSize: true,
+      });
       }
-      console.log(size)
-      $this = $("#sendCommandeButton");
+      else{
+        var name = $("input#nameCommande"+i).val();
+      }
+      console.log(name)
+      var email = $("input#emailCommande"+i).val();
+      var type = $("select#selectType"+i).val();
+      var size = $("select#selectSize"+i).val();
+
+      $this = $("#sendCommandeButton"+i);
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
         url: "././mail/commande.php",
         type: "POST",
         data: {
-            photo_name: "testNamePhoto",
+            photo_name: "Diapositive"+i,
             user_name: name,
             email: email,
             type: type,
@@ -32,25 +39,25 @@ $(function() {
         cache: false,
         success: function() {
           // Success message
-          $('#successCommande').html("<div class='alert alert-success'>");
-          $('#successCommande > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          $('#successCommande'+i).html("<div class='alert alert-success'>");
+          $('#successCommande'+i+' > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
-          $('#successCommande > .alert-success')
+          $('#successCommande'+i+' > .alert-success')
             .append("<strong>Votre pré-commande a été envoyé. </strong>");
-          $('#successCommande > .alert-success')
+          $('#successCommande'+i+' > .alert-success')
             .append('</div>');
           //clear all fields
-          $('#commandeForm').trigger("reset");
+          $('#commandeForm'+i).trigger("reset");
         },
         error: function() {
           // Fail message
-          $('#successCommande').html("<div class='alert alert-danger'>");
-          $('#successCommande > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          $('#successCommande'+i).html("<div class='alert alert-danger'>");
+          $('#successCommande'+i+' > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
-          $('#successCommande > .alert-danger').append($("<strong>").text("Désolé " + firstName + ", il semble que le serveur ne répond pas. Veuillez réessayer plus tard !"));
-          $('#successCommande > .alert-danger').append('</div>');
+          $('#successCommande'+i+' > .alert-danger').append($("<strong>").text("Désolé, il semble que le serveur ne répond pas. Veuillez réessayer plus tard !"));
+          $('#successCommande'+i+' > .alert-danger').append('</div>');
           //clear all fields
-          $('#commandeForm').trigger("reset");
+          $('#commandeForm'+i).trigger("reset");
         },
         complete: function() {
           setTimeout(function() {
@@ -68,32 +75,40 @@ $(function() {
     e.preventDefault();
     $(this).tab("show");
   });
-});
+};
 
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
-  $('#successCommande').html('');
+  $('#successCommande'+i).html('');
 });
 
 
-function changePrice() {
-    var type = $("select#selectType").val();
-    var size = $("select#selectSize").val();
+function changePrice(i) {
+    var type = $("select#selectType"+i).val();
+    var size = $("select#selectSize"+i).val();
     if (type === "Alu-dibond"){
-        if (size === "petit"){price = 90;}
-        else if (size === "moyen"){price = 150;}
-        else if (size === "grand"){price = 230;}
+        if (size === "petit"){price = 99;}
+        else if (size === "moyen"){price = 179;}
+        else if (size === "grand"){price = 319;}
+        else {price = 0};
+    }
+    else if (type === "Papier"){
+        if (size === "petit"){price = 59;}
+        else if (size === "moyen"){price = 109;}
+        else if (size === "grand"){price = 169;}
         else {price = 0};
     }
     else if (type === "Papier-Cadre"){
-        if (size === "petit"){price = 110;}
-        else if (size === "moyen"){price = 170;}
-        else if (size === "grand"){price = 250;}
+        if (size === "petit"){price = 119;}
+        else if (size === "moyen"){price = 219;}
+        else if (size === "grand"){price = 319;}
         else {price = 0};
     }
     else price = 0;
 
-    document.getElementById("price").innerHTML = price + ",00€";
+    console.log("size = ", price)
+
+    document.getElementById("price"+i).innerHTML = price + ",00€";
 }
 
 

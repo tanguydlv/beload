@@ -18,8 +18,8 @@ $size = strip_tags(htmlspecialchars($_POST['size']));
 
 // Create the email and send the message
 $toTanguy = 'tvillegeorges@gmail.com';
-$toVal = 'valentin.durand@gmail.com';
-$toGuim = 'gvillegeorges@hotmail.fr';
+$toVal = 'valentin.durand0@gmail.com';
+$toGuim = 'guillemettedlv@gmail.com';
 
 $email_subject = "[BeLoad] Commande de:  $user_name";
 
@@ -36,8 +36,8 @@ $headers = "From: noreply@beload.com\n";
 $headers .= "Reply-To: $email_address";
 
 mail($toTanguy,$email_subject,$email_body,$headers);
-//mail($toVal,$email_subject,$email_body,$headers);
-//mail($toGuim,$email_subject,$email_body,$headers);
+mail($toVal,$email_subject,$email_body,$headers);
+mail($toGuim,$email_subject,$email_body,$headers);
 
 return true;
 ?>

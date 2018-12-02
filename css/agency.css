@@ -16,7 +16,7 @@ a:hover{
     color:#fed136!important
 }
 h1,h2,h3,h4,h5,h6{
-    font-weight:700;
+    font-weight:200;
     font-family:Futura, Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
 }
 section{
@@ -42,7 +42,7 @@ section h3.section-subheading{
 }
 .btn{
     font-family:Futura, Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
-    font-weight:700
+    font-weight:500
 }
 .btn-xl{
     font-size:18px;
@@ -79,7 +79,7 @@ img::-moz-selection{
     background:0 0
 }
 #mainNav{
-    background-color:#212529
+    background-color:#fff
 }
 #mainNav .navbar-toggler{
     font-size:12px;
@@ -88,7 +88,7 @@ img::-moz-selection{
     text-transform:uppercase;
     color:#fff;
     border:0;
-    background-color:#fed136;
+    background-color:#000;
     font-family:Futura, Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
 }
 #mainNav .navbar-brand{
@@ -138,26 +138,26 @@ img::-moz-selection{
 }
 header.masthead{
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
 }
 header.masthead .intro-img{
-    flex-basis: 50%;
+    flex-basis: 0%;
     color:#fff;
-    padding-top: 80px;
-    padding-left: 80px;
+    margin-top: 20px
 }
 header.masthead .intro-text{
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-top: 100px
 }
 header.masthead .intro-text .logo{
     padding-left: 20%;
     padding-right: 20%;
 }
 header.masthead .intro-text .baseline{
-    margin-top: 40px;
+    margin-top: 20px;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -176,9 +176,21 @@ header.masthead .intro-text .intro-heading{
     font-family:Futura, Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
 }
 @media (min-width:768px){
+    header.masthead{
+        display: flex;
+        flex-direction: row;
+    }
+    header.masthead .intro-img{
+    flex-basis: 50%;
+    color:#fff;
+    padding-top: 90px;
+    padding-left: 90px;
+    margin-top: 0px;
+}
     header.masthead .intro-text{
         padding-top:15%;
-        padding-bottom:200px
+        padding-bottom:200px;
+        margin-top: 0px;
     }
     header.masthead .intro-text .intro-lead-in{
         font-size:40px;
