@@ -22,14 +22,18 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.title-offer{
+    margin: 4px;
+    border: 2px solid #dee2e6;
+    justify-content: center;
+    margin-bottom: 20px
+}
 @media (min-width:767px){
     .arguments{
         flex-direction: row;
     }
 }
 .arg{
-    padding-left: 60px;
-    padding-right: 60px;
     text-align: center;
     margin-bottom: 0;
 }

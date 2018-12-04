@@ -122,60 +122,46 @@
     <section class="" id="offre">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-12 text-center margin-bottom-small">
             <h2 class="section-subheading text-uppercase">Nos Offres</h2>
           </div>
         </div>
-        <div class="row offre-container margin-top-small">
-          <div class="col-sm-4">
-            <div class="">
-              <img class="img-fluid" src="img/offre/cadres.png" alt="">
+        <div class="row margin-bottom-small">
+          <div class="col-lg-8">
+            <div class="row title-offer">
+              <p class="arg text-uppercase">Tirage</p> 
             </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="">
-              <img class="img-fluid" src="img/offre/alu.png" alt="">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="size">
-              <div class="size-row">
-                <div id="carre-small"></div>
-                <p class="text-row"><u>Taille</u> : 40 x 40 cm<br>
-                  Alu dibond 99€<br>
-                  Tirage papier 59€<br>
-                  Tirage papier et cadre 119€
-                </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <img class="img-fluid" src="img/offre/offer1.png" />
               </div>
-              <div class="size-row">
-                <div id="carre-medium"></div>
-                <p class="text-row"><u>Taille</u> : 70 x 70 cm<br>
-                  Alu dibond 179€<br>
-                  Tirage papier 109€<br>
-                  Tirage papier et cadre 219€
-                </p>
-              </div>
-              <div class="size-row">
-                <div id="carre-large"></div>
-                <p class="text-row"><u>Taille</u> : 100 x 100 cm<br>
-                  Alu dibond 319€<br>
-                  Tirage papier 169€<br>
-                  Tirage papier et cadre 311€
-                </p>
+              <div class="col-lg-6">
+                <img class="img-fluid" src="img/offre/offer2.png" />
               </div>
             </div>
           </div>
-        </div>
+          <div class="col-lg-4">
+              <div class="row title-offer">
+                  <p class="arg text-uppercase">Finition (optionnelle)</p> 
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <img class="img-fluid" src="img/offre/offer3.png" />
+                </div>
+              </div>
+            </div>
+          </div>
         <hr>
         <div class="row">
-          <div class="arguments">
-            <p class="arg" >Livraison en 7-10 jours ouvrés</p>
-            <p class="arg" >Sevice client ouvert 7/7</p>
-            <p class="arg" >Livraison en France métropolitaine</p>
+          <div class="col-lg-10 offset-1">
+            <div class="arguments">
+              <p class="arg" >Livraison en 7-10 jours ouvrés</p>
+              <p class="arg" >Sevice client ouvert 7/7</p>
+              <p class="arg" >Livraison en France métropolitaine</p>
+            </div>
           </div>
         </div>
         <hr>
-      </div>
     </section>
 
     <!-- Portfolio Grid -->
@@ -210,23 +196,14 @@
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h3 class="text-uppercase">Commander votre tableau</h3>
-                  <p class="item-intro text-muted">Formats de fichier : JPG et TIF
+                  <p class="item-intro text-muted">Formats de fichier : JPG et PNG
                   </br>Format minimal : 0,4 mégapixel (par ex. 700x700 pixel)</p>
-                  <form class="text-left" id="commandeForm0" name="sentCommande" novalidate="novalidate">
                     <div class="image-editor align-items-center">
-                      <input type="file" class="cropit-image-input">
+                      <input type="file" class="cropit-image-input" required=false>
                       <div class="cropit-preview"></div>
-                      <input type="range" class="cropit-image-zoom-input">
+                      <input type="range" class="cropit-image-zoom-input" required=false>
                     </div>
-                    <script type="text/javascript">
-                      (function($){
-                        $('.image-editor').cropit({
-                          exportZoom: 1.25,
-                          imageBackground: true,
-                          imageBackgroundBorderWidth: 50,
-                        });
-                      })(jQuery);
-                    </script>
+                  <form class="text-left" id="commandeForm0" name="sentCommande" novalidate="novalidate"></form>
                     <p class="text-muted margin-top-small text-center">
                          Encore quelques informations à remplir ! </br>Une fois votre photo pré-commandée, nous vous enverrons un email de validation pour finaliser votre transaction.</p>
                       <div class="form-group">
@@ -266,7 +243,7 @@
                       </div>
                       <div class="text-center">
                         <div id="successCommande0"></div>
-                        <button id="sendCommandeButton0" class="btn btn-outline-dark text-uppercase" onclick="sendCommande(0)" >Pré-commander</button>
+                        <button id="sendCommandeButton0" type="submit" class="btn btn-outline-dark text-uppercase" >Pré-commander</button>
                       </div>
                     </form>
                 </div>
@@ -276,6 +253,26 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript">
+      (function($){
+        $('.image-editor').cropit({
+          exportZoom: 1.25,
+          imageBackground: true,
+          imageBackgroundBorderWidth: 50,
+        });
+        $('#sendCommandeButton0').click(function(e) {
+          console.log("coucou")
+          e.preventDefault();
+          var imageData =  $('.image-editor').cropit('export', {
+          type: 'image/jpeg',
+          quality: 1,
+          originalSize: true,
+          })
+          sendCommandePerso(imageData)
+        });
+      })(jQuery);
+    </script>
 
     <!-- Begin Mailchimp Signup Form -->
     <div id="mc_embed_signup">
@@ -388,10 +385,10 @@
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
     <script src="js/galerie.js"></script>
-    <script src="js/commande.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
+    <script src="js/commande.js"></script>
 
   </body>
 

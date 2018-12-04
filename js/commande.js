@@ -8,18 +8,8 @@ function sendCommande(i) {
     submitSuccess: function($form, event) {
       event.preventDefault(); // prevent default submit behaviour
       // get values from FORM
-      if (i===0) {
-        console.log("toto")
-        var name = $('.image-editor').cropit('export', {
-          type: 'image/jpeg',
-          quality: 1,
-          originalSize: true,
-      });
-      }
-      else{
-        var name = $("input#nameCommande"+i).val();
-      }
-      console.log(name)
+
+      var name = $("input#nameCommande"+i).val();
       var email = $("input#emailCommande"+i).val();
       var type = $("select#selectType"+i).val();
       var size = $("select#selectSize"+i).val();
@@ -83,6 +73,60 @@ $('#name').focus(function() {
 });
 
 
+function sendCommandePerso(imageData) {
+  var photo_name = imageData;
+  var name = $("input#nameCommande0").val();
+  var email = $("input#emailCommande0").val();
+  var type = $("select#selectType0").val();
+  var size = $("select#selectSize0").val();
+
+  $.ajax({
+    url: "././mail/commande.php",
+    type: "POST",
+    data: {
+        photo_name: photo_name,
+        user_name: name,
+        email: email,
+        type: type,
+        size: size
+    },
+    cache: false,
+    success: function() {
+      // Success message
+      $('#successCommande0').html("<div class='alert alert-success'>");
+      $('#successCommande0'+' > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+        .append("</button>");
+      $('#successCommande0'+' > .alert-success')
+        .append("<strong>Votre pré-commande a été envoyé. </strong>");
+      $('#successCommande0'+' > .alert-success')
+        .append('</div>');
+      //clear all fields
+      $('#commandeForm0').trigger("reset");
+    },
+    error: function() {
+      // Fail message
+      $('#successCommande0').html("<div class='alert alert-danger'>");
+      $('#successCommande0'+' > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+        .append("</button>");
+      $('#successCommande0'+' > .alert-danger').append($("<strong>").text("Désolé, il semble que le serveur ne répond pas. Veuillez réessayer plus tard !"));
+      $('#successCommande0'+' > .alert-danger').append('</div>');
+      //clear all fields
+      $('#commandeForm0').trigger("reset");
+    }
+  });
+  $("a[data-toggle=\"tab\"]").click(function(e) {
+    e.preventDefault();
+    $(this).tab("show");
+  });
+};
+
+/*When clicking on Full hide fail/success boxes */
+$('#name').focus(function() {
+  $('#successCommande0').html('');
+});
+
+
+
 function changePrice(i) {
     var type = $("select#selectType"+i).val();
     var size = $("select#selectSize"+i).val();
@@ -110,5 +154,3 @@ function changePrice(i) {
 
     document.getElementById("price"+i).innerHTML = price + ",00€";
 }
-
-
