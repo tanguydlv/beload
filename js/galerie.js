@@ -85,9 +85,8 @@ $(function() {
             "                    <div class=\"col\">\n" +
             "                      <label for=\"selectType\">Type d'impression</label>\n" +
             "                      <select class=\"form-control\" id=\"selectType"+i+"\" onchange=\"changePrice("+i+")\">\n" +
+            "                        <option value=\"Papier\">Tirage papier sur PVC </option>\n" +
             "                        <option value=\"Alu-dibond\">Alu-dibond </option>\n" +
-            "                        <option value=\"Papier\">Tirage papier </option>\n" +
-            "                        <option value=\"Papier-Cadre\">Tirage papier + cadre</option>\n" +
             "                      </select>\n" +
             "                    </div>\n" +
             "                    <div class=\"col\">\n" +
@@ -98,6 +97,10 @@ $(function() {
             "                        <option value=\"grand\">Grand - 100 x100 cm</option>\n" +
             "                      </select>\n" +
             "                    </div>\n" +
+            "                  </div>\n" +
+            "                  <div class=\"form-check text-left margin-top-small\">\n" +
+            "                    <input type=\"checkbox\" class=\"form-check-input\" id=\"selectCheck"+i+"\" onchange=\"changePrice("+i+")\">\n" +
+            "                    <label class=\"form-check-label\" for=\"selectCheck"+i+"\">Avec encadrement</label>\n" +
             "                  </div>\n" +
             "                  <div class=\"text-right margin-top\">\n" +
             "                    <h2 id=\"price"+i+"\">99,00€</h2>\n" +

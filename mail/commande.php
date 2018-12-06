@@ -4,7 +4,8 @@ if(empty($_POST['photo_name'])      ||
    empty($_POST['user_name'])     ||
    empty($_POST['email'])     ||
    empty($_POST['type'])     ||
-   empty($_POST['size']))
+   empty($_POST['size'])     ||
+   empty($_POST['encadrement']))
    {
    echo "No arguments Provided!";
    return false;
@@ -15,6 +16,7 @@ $photo_name = strip_tags(htmlspecialchars($_POST['photo_name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $type = strip_tags(htmlspecialchars($_POST['type']));
 $size = strip_tags(htmlspecialchars($_POST['size']));
+$encadrement = strip_tags(htmlspecialchars($_POST['encadrement']));
 
 // Create the email and send the message
 $toTanguy = 'tvillegeorges@gmail.com';
@@ -29,7 +31,8 @@ Nom: $user_name\n\n
 Email: $email_address\n\n
 Nom de la photo: $photo_name\n\n
 Type d'impression: $type\n\n
-Taille: $size";
+Taille: $size\n\n
+Encadrement: $encadrement";
 
 $headers = "From: noreply@beload.com\n";
 
