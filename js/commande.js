@@ -13,6 +13,7 @@ function sendCommande(i) {
       var email = $("input#emailCommande"+i).val();
       var type = $("select#selectType"+i).val();
       var size = $("select#selectSize"+i).val();
+      var encadrement = $("#selectCheck"+i).is(":checked")
 
       $this = $("#sendCommandeButton"+i);
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
@@ -24,7 +25,8 @@ function sendCommande(i) {
             user_name: name,
             email: email,
             type: type,
-            size: size
+            size: size,
+            encadrement: encadrement
         },
         cache: false,
         success: function() {
@@ -33,7 +35,7 @@ function sendCommande(i) {
           $('#successCommande'+i+' > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
           $('#successCommande'+i+' > .alert-success')
-            .append("<strong>Votre pré-commande a été envoyé. </strong>");
+            .append("<strong>Votre pré-commande a été envoyée. </strong>");
           $('#successCommande'+i+' > .alert-success')
             .append('</div>');
           //clear all fields
@@ -79,6 +81,7 @@ function sendCommandePerso(imageData) {
   var email = $("input#emailCommande0").val();
   var type = $("select#selectType0").val();
   var size = $("select#selectSize0").val();
+  var encadrement = $("#selectCheck0").is(":checked");
 
   $.ajax({
     url: "././mail/commande.php",
@@ -88,7 +91,8 @@ function sendCommandePerso(imageData) {
         user_name: name,
         email: email,
         type: type,
-        size: size
+        size: size,
+        encadrement: encadrement
     },
     cache: false,
     success: function() {
@@ -97,7 +101,7 @@ function sendCommandePerso(imageData) {
       $('#successCommande0'+' > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
         .append("</button>");
       $('#successCommande0'+' > .alert-success')
-        .append("<strong>Votre pré-commande a été envoyé. </strong>");
+        .append("<strong>Votre pré-commande a été envoyée. </strong>");
       $('#successCommande0'+' > .alert-success')
         .append('</div>');
       //clear all fields
@@ -130,27 +134,33 @@ $('#name').focus(function() {
 function changePrice(i) {
     var type = $("select#selectType"+i).val();
     var size = $("select#selectSize"+i).val();
-    if (type === "Alu-dibond"){
+    if ($("#selectCheck"+i).is(":checked")){
+      if (i === 0){
+        if (size === "petit"){price = 149;}
+        else if (size === "moyen"){price = 259;}
+        else if (size === "grand"){price = 389;}
+        else {price = "erreur"};
+      }
+      else {
+        if (size === "petit"){price = 169;}
+        else if (size === "moyen"){price = 299;}
+        else if (size === "grand"){price = 439;}
+          else {price = "erreur"};
+      }
+    }
+    else{
+      if (i === 0){
+        if (size === "petit"){price = 79;}
+        else if (size === "moyen"){price = 139;}
+        else if (size === "grand"){price = 229;}
+        else {price = "erreur"};
+      }
+      else {
         if (size === "petit"){price = 99;}
         else if (size === "moyen"){price = 179;}
-        else if (size === "grand"){price = 319;}
-        else {price = 0};
+        else if (size === "grand"){price = 279;}
+          else {price = "erreur"};
+      }
     }
-    else if (type === "Papier"){
-        if (size === "petit"){price = 59;}
-        else if (size === "moyen"){price = 109;}
-        else if (size === "grand"){price = 169;}
-        else {price = 0};
-    }
-    else if (type === "Papier-Cadre"){
-        if (size === "petit"){price = 119;}
-        else if (size === "moyen"){price = 219;}
-        else if (size === "grand"){price = 319;}
-        else {price = 0};
-    }
-    else price = 0;
-
-    console.log("size = ", price)
-
     document.getElementById("price"+i).innerHTML = price + ",00€";
 }
