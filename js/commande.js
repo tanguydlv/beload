@@ -82,9 +82,11 @@ function sendCommandePerso(imageData) {
   var type = $("select#selectType0").val();
   var size = $("select#selectSize0").val();
   var encadrement = $("#selectCheck0").is(":checked");
-
+  console.log("photo perso")
+  $this = $("#sendCommandeButton0");
+  $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
   $.ajax({
-    url: "././mail/commande.php",
+    url: "././mail/commande_perso.php",
     type: "POST",
     data: {
         photo_name: photo_name,
@@ -116,8 +118,14 @@ function sendCommandePerso(imageData) {
       $('#successCommande0'+' > .alert-danger').append('</div>');
       //clear all fields
       $('#commandeForm0').trigger("reset");
-    }
+    },
+    complete: function() {
+      setTimeout(function() {
+        $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+      }, 1000);
+    }  
   });
+  
   $("a[data-toggle=\"tab\"]").click(function(e) {
     e.preventDefault();
     $(this).tab("show");

@@ -1,4 +1,16 @@
 <?php
+if (!function_exists('file_put_contents')) {
+    function file_put_contents($filename, $data) {
+        $f = @fopen($filename, 'w');
+        if (!$f) {
+            return false;
+        } else {
+            $bytes = fwrite($f, $data);
+            fclose($f);
+            return $bytes;
+        }
+    }
+}
 // Check for empty fields
 if(empty($_POST['photo_name'])      ||
    empty($_POST['user_name'])     ||
@@ -19,6 +31,11 @@ $size = strip_tags(htmlspecialchars($_POST['size']));
 $encadrement = strip_tags(htmlspecialchars($_POST['encadrement']));
 
 
+define('UPLOAD_DIR', '../images/');
+$file = UPLOAD_DIR . uniqid('', true) . '.txt';
+$success = file_put_contents($file, $photo_name);
+print $success ? $file : 'Unable to save the file.';
+
 // Create the email and send the message
 $toTanguy = 'tvillegeorges@gmail.com';
 $toVal = 'valentin.durand0@gmail.com';
@@ -30,7 +47,7 @@ $email_body = "Salut Beload,\n\n".
               "On a recu une commande à traiter au plus vite. Voici les détails:\n\n
 Nom: $user_name\n\n
 Email: $email_address\n\n
-Nom de la photo: $photo_name\n\n
+Nom de la photo: $file\n\n
 Type d'impression: $type\n\n
 Taille: $size\n\n
 Encadrement: $encadrement";
